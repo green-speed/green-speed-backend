@@ -3,8 +3,6 @@ from enum import Enum
 
 from typing import List
 
-import jsons
-
 
 class TransportationType(str, Enum):
     BIKE = 'bike'
