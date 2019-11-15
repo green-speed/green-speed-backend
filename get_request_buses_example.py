@@ -10,6 +10,22 @@ def get_closest_stations(current_lat,
                          list_ort_name,
                          list_ort_gemeinde,
                          amount_to_get=2):
+    '''
+    :param current_lat: latitude of a point, to which we count distance
+    :param current_long: longitude of a point, to which we count distance
+    :param list_ort_nr: list of all existing numbers of buses
+    :param list_lat: list of latitudes for all existing numbers of buses
+    :param list_long: list of longitudes for all existing numbers of buses
+    :param list_ort_name: list of ort_name for all existing numbers of buses
+    :param list_ort_gemeinde: list of ort_gemeinde for all existing numbers of buses
+    :param amount_to_get: how many closest stations to get
+    :return:
+    the closest points of bus stops -
+    result_list - number of a bus,
+    result_names_list - names of buses,
+    result_gemeinde_list - gemeinde names
+    '''
+
     list_distances = []
     for i in range(len(list_ort_nr)):
         list_distances.append(abs(list_lat[i] - current_lat) + abs(list_long[i] - current_long))
@@ -57,7 +73,6 @@ for el in data:
         list_ort_name.append(el['ORT_NAME'])
         list_ort_gemeinde.append(el['ORT_GEMEINDE'])
 
-
 stations, station_names, station_gemeinde = get_closest_stations(
     current_lat=56,
     current_long=45,
@@ -71,4 +86,3 @@ stations, station_names, station_gemeinde = get_closest_stations(
 print('2 closest stations to curretn location is')
 print('station number: ', stations[0], 'ort name: ', station_names[0], 'ort gemeinde: ', station_gemeinde[0])
 print('station number: ', stations[1], 'ort name: ', station_names[1], 'ort gemeinde: ', station_gemeinde[1])
-
