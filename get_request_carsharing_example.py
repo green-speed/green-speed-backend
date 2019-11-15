@@ -2,7 +2,7 @@
 import requests
 
 # api-endpoint
-URL = "https://ipchannels.integreen-life.bz.it/ninja/api/v2/flat/Bicycle"
+URL = "https://ipchannels.integreen-life.bz.it/ninja/api/v2/flat/CarsharingCar"
 
 # defining a params dict for the parameters to be sent to the API
 PARAMS = {'limit': -1, 'offset': 0, 'shownull': False, 'distinct': True}
