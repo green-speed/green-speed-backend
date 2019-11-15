@@ -34,9 +34,3 @@ class DirectionsResponse(object):
     location_from: str
     location_to: str
     transportation_options: List[TransportationOption]
-
-
-with open('/home/hlib/dev/green-speed-backend/sample_transportaion_options.json', 'r') as f:
-    response = jsons.loads(f.read(), DirectionsResponse)
-
-print(response)
