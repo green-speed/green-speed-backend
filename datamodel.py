@@ -6,10 +6,10 @@ from typing import List
 
 
 class TransportationType(str, Enum):
-    BIKE = 'bike'
+    BIKE = 'bicycle'
     BUS = 'bus'
     TRAIN = 'train'
-    WALKING = 'walking'
+    WALKING = 'walk'
     CAR_POOLING = 'car_pooling'
     CAR_SHARING = 'car_sharing'
 
