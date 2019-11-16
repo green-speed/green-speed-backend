@@ -55,7 +55,7 @@ def get_sample_transportation_options():
                                       Leg(transportation_type=TransportationType.WALKING)
                                   ]),
                                   TransportationOption(green_score=2, total_time=duration2,
-                                                       departure_time=f'{departure_time2.hour}:{departure_time2.min}',
+                                                       departure_time=f'{departure_time2.hour}:{departure_time2.minute}',
                                                        arrival_time=f'{arrival2.hour}:{arrival2.min}',
                                                        legs=[
                                                            Leg(transportation_type=TransportationType.WALKING),
