@@ -6,10 +6,10 @@ from typing import List
 
 
 class TransportationType(str, Enum):
-    BIKE = 'bike'
+    BIKE = 'bicycle'
     BUS = 'bus'
     TRAIN = 'train'
-    WALKING = 'walking'
+    WALKING = 'walk'
     CAR_POOLING = 'car_pooling'
     CAR_SHARING = 'car_sharing'
 
@@ -35,6 +35,10 @@ class DirectionsResponse(object):
     transportation_options: List[TransportationOption]
 
 
+def format_time(hour: int, minute: int):
+    return f'{hour:02d}:{minute:02d}'
+
+
 def get_sample_transportation_options():
     current_time = datetime.datetime.now() + datetime.timedelta(hours=1)
     departure_time1 = current_time + datetime.timedelta(minutes=2)
@@ -47,16 +51,16 @@ def get_sample_transportation_options():
     return DirectionsResponse(location_from="Hotel Figl", location_to="Lago di Caldaro",
                               transportation_options=[
                                   TransportationOption(green_score=3, total_time=duration1,
-                                                       departure_time=f'{departure_time1.hour}:{departure_time1.minute}',
-                                                       arrival_time=f'{arrival1.hour}:{arrival1.minute}',
+                                                       departure_time=format_time(departure_time1.hour, departure_time1.minute),
+                                                       arrival_time=format_time(arrival1.hour, arrival1.minute),
                                                        legs=[
                                       Leg(transportation_type=TransportationType.WALKING),
                                       Leg(transportation_type=TransportationType.BIKE),
                                       Leg(transportation_type=TransportationType.WALKING)
                                   ]),
                                   TransportationOption(green_score=2, total_time=duration2,
-                                                       departure_time=f'{departure_time2.hour}:{departure_time2.minute}',
-                                                       arrival_time=f'{arrival2.hour}:{arrival2.minute}',
+                                                       departure_time=format_time(departure_time2.hour, departure_time2.minute),
+                                                       arrival_time=format_time(arrival2.hour, arrival2.minute),
                                                        legs=[
                                                            Leg(transportation_type=TransportationType.WALKING),
                                                            Leg(transportation_type=TransportationType.BUS)
