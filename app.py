@@ -41,7 +41,7 @@ def get_directions():
     to_location = request.args.get('to')
     if from_location or to_location:
         sample_transportation_options = get_sample_transportation_options()
-        return jsonify(sample_transportation_options)
+        return jsonify({"data": [sample_transportation_options]})
     else:
         abort(404)
 
