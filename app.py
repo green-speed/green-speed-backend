@@ -1,12 +1,23 @@
+import logging
 import os
 
+import requests
 from flask import Flask, jsonify, abort
 from flask import request
+
+from datamodel import get_sample_transportation_options
 
 app = Flask(__name__)
 
 current_script_location = os.path.realpath(__file__)
 root_package_dir = os.path.dirname(current_script_location)
+
+logging.basicConfig()
+logging.getLogger().setLevel(logging.DEBUG)
+requests_log = logging.getLogger("requests.packages.urllib3")
+requests_log.setLevel(logging.DEBUG)
+requests_log.propagate = True
+
 
 
 @app.route('/route')
@@ -27,9 +38,8 @@ def get_directions():
     from_location = request.args.get('from') #if key doesn't exist, returns None
     to_location = request.args.get('to')
     if from_location or to_location:
-        with open(os.path.join(root_package_dir, 'sample_transportaion_options.json'), 'r') as f:
-            s = f.read()
-        return jsonify(s)
+        sample_transportation_options = get_sample_transportation_options()
+        return jsonify(sample_transportation_options)
     else:
         abort(404)
 

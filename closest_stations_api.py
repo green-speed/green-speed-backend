@@ -1,3 +1,5 @@
+import logging
+
 import requests
 
 
@@ -6,6 +8,7 @@ def calc_diff_between_coords():
 
 
 def get_closest_bikes():
+    logging.info("Getting closest bike sharing stations...")
     URL = "https://ipchannels.integreen-life.bz.it/ninja/api/v2/flat/BikesharingStation"
 
     # defining a params dict for the parameters to be sent to the API
@@ -22,6 +25,7 @@ def get_closest_bikes():
 
 
 def get_closest_carsharing():
+    logging.info("Getting closest carsharing sharing stations...")
     URL = "https://ipchannels.integreen-life.bz.it/ninja/api/v2/flat/CarsharingCar"
 
     # defining a params dict for the parameters to be sent to the API
