@@ -48,7 +48,7 @@ def get_sample_transportation_options():
                               transportation_options=[
                                   TransportationOption(green_score=3, total_time=duration1,
                                                        departure_time=f'{departure_time1.hour}:{departure_time1.minute}',
-                                                       arrival_time=f'{arrival1.hour}:{arrival1.min}',
+                                                       arrival_time=f'{arrival1.hour}:{arrival1.minute}',
                                                        legs=[
                                       Leg(transportation_type=TransportationType.WALKING),
                                       Leg(transportation_type=TransportationType.BIKE),
@@ -56,7 +56,7 @@ def get_sample_transportation_options():
                                   ]),
                                   TransportationOption(green_score=2, total_time=duration2,
                                                        departure_time=f'{departure_time2.hour}:{departure_time2.minute}',
-                                                       arrival_time=f'{arrival2.hour}:{arrival2.min}',
+                                                       arrival_time=f'{arrival2.hour}:{arrival2.minute}',
                                                        legs=[
                                                            Leg(transportation_type=TransportationType.WALKING),
                                                            Leg(transportation_type=TransportationType.BUS)
