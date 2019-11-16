@@ -9,8 +9,7 @@ from flask import request
 from datamodel import get_sample_transportation_options
 
 app = Flask(__name__)
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 current_script_location = os.path.realpath(__file__)
 root_package_dir = os.path.dirname(current_script_location)
@@ -37,7 +36,6 @@ def find_bus():
 
 
 @app.route('/api/v1/directions')
-@cross_origin()
 def get_directions():
     from_location = request.args.get('from') #if key doesn't exist, returns None
     to_location = request.args.get('to')
