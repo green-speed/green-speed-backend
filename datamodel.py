@@ -36,7 +36,7 @@ class DirectionsResponse(object):
 
 
 def get_sample_transportation_options():
-    current_time = datetime.datetime.now()
+    current_time = datetime.datetime.now() + datetime.timedelta(hours=1)
     departure_time1 = current_time + datetime.timedelta(minutes=2)
     departure_time2 = current_time + datetime.timedelta(minutes=4)
     duration1 = 58
