@@ -1,5 +1,11 @@
 # green-speed-backend
 
+The application is created as a project for Bolzano hackathon (NOI Technopark).
+
+The main idea is to develop app, which would show the route from point A to point B with a green-score level, which means how much is this transport good for the environment. 
+
+The app uses API from SASA buses, car-sharing, bike-sharing in South Tyrol. 
+
 # flask_app
 
 Example of usage: 
